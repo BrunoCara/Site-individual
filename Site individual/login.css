@@ -1,0 +1,145 @@
+body {
+    align-items: center;
+    background-image: url(img/fundocadastro.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    height: 95vh;
+}
+.form {
+    background-color: #181b3a;
+    border-radius: 20px;
+    box-sizing: border-box;
+    height: 500px;
+    padding: 20px;
+    width: 320px;
+    box-shadow: rgb(0, 0, 0) 0px 0px 15px 0px;
+}
+.logo{
+    height: 100px ;
+    margin-bottom: -2px;
+}
+.titulo {
+    color: #E7DFDD;
+    font-family: sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+}
+.subtitulo {
+    color: #E7DFDD;
+    font-family: sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+}
+.input-container {
+    height: 50px;
+    position: relative;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.input {
+    background-color: #303245;
+    border-radius: 12px;
+    border: 0;
+    box-sizing: border-box;
+    color: #E7DFDD;
+    font-size: 18px;
+    height: 100%;
+    outline: 0;
+    padding: 4px 20px 0;
+    width: 100%;
+}
+.div_input {
+    background-color: #181b3a;
+    border-radius: 10px;
+    height: 20px;
+    left: 20px;
+    position: absolute;
+    top: -20px;
+    transform: translateY(0);
+    transition: transform 200ms;
+    width: 76px;
+}
+
+.input:focus ~ .div_input, .input:not(:placeholder-shown) ~ .div_input {
+    transform: translateY(8px);
+}
+.placeholder {
+    color: #65657b;
+    font-family: sans-serif;
+    left: 20px;
+    line-height: 14px;
+    pointer-events: none;
+    position: absolute;
+    transform-origin: 0 50%;
+    transition: transform 200ms, color 200ms;
+    top: 20px;
+}
+.input:focus ~ .placeholder, .input:not(:placeholder-shown) ~ .placeholder {
+    transform: translateY(-30px) translateX(18px) scale(0.8);
+}
+.input:not(:placeholder-shown) ~ .placeholder {
+    color: #808097;
+}
+.input:focus ~ .placeholder {
+    color: #f76134;
+}
+
+.entrar{
+    height: 30px; 
+    position: absolute;
+    top: 30%;
+    right: 5%;
+    opacity: 0;
+}
+
+.login{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-direction: column;
+    height: 100px;
+
+    width: 30%;
+    margin-top: 5%;
+    margin-left: 60%;
+}
+
+.btn {
+    font-family: 'Poppins', sans-serif;
+    background: #f76134;
+    color: #1d1d1d;
+    cursor: pointer;
+    font-size: 30px;
+    padding: 0.7rem;
+    border: 0;
+    transition: all 1s;
+    border-radius: 10px;
+    position: relative;
+    min-width: 190px;
+    height: 60px;   
+    font-weight: 700;
+    margin-right: 20%;
+}
+.btn:hover {
+    background: #00a0a0;
+    transition: all 0.5s;
+    border-radius: 10px;
+    box-shadow: 0px 6px 15px #000f61;
+    padding: 0.7rem 3rem 0.7rem 0.7rem;
+    color: #fff;
+    position: relative;
+}
+
+.btn:hover .entrar {
+    opacity: 1;
+    transition: 1S;
+}
+
