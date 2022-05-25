@@ -1,6 +1,6 @@
 body {
     align-items: center;
-    background-image: url(img/fundocadastro.jpg);
+    background-image: url(../img/fundocadastro.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;

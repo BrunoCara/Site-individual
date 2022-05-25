@@ -1,6 +1,6 @@
 body {
     align-items: center;
-    background-image: url(img/fundocadastro.jpg);
+    background-image: url(../img/fundocadastro.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -184,3 +184,8 @@ body {
     opacity: 0;
 }
 
+.sel1{
+    background-color: #65657b;
+    color: white;
+    height: 40px;
+}

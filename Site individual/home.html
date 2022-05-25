@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dunk News</title>
+    <link rel="stylesheet" href="css/home.css">
+    <script src="./js/noticias.js"></script>
+</head>
+<body>
+    <section class="inicio" id="inicio">
+      <div class="header">
+        <img src="img/logo2.png" alt="">
+        <nav>
+          <ul>
+            <li id="homeli"><a href="#home">Home</a></li>
+            <li id="jogosli"><a href="#Noticias">Noticias</a></li>
+            <li id="quemli"><a href="#quemsomos">Quem Somos</a></li>
+            <li id="graficoli"><a href="#grafico">Gráfico</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="carrosel"><img src="https://www.nbaportugal.com/wp-content/uploads/2021/02/curry_doncic1.jpg" alt="" id="doncic"></div>
+    </section>
+    
+    
+</body>
+</html>
+<script>
+  var lista_noticias = ["https://www.nbaportugal.com/wp-content/uploads/2021/02/curry_doncic1.jpg", "https://library.sportingnews.com/styles/crop_style_16_9_mobile_2x/s3/2021-08/tatum-butler-091720-ftr-gettyjpg_oxed48571olq1j0prplldfntz.jpg?itok=pH-km6_d", "https://clutchpoints.com/wp-content/uploads/2020/04/Stephen-Curry-_changed-the-game_-says-Jayson-Tatum.jpg"]
+
+
+  setInterval(function () {trocar_imagem()}, 3000)
+
+  var c = 0
+  function trocar_imagem(){
+    doncic.src = lista_noticias[c]
+    c++
+    if(c == 3){
+      c = 0
+    }
+  }
+</script>
