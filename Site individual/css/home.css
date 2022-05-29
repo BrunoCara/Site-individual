@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@300&family=Red+Hat+Display&display=swap');
 body {
   padding: 0;
   margin: 0;
@@ -6,11 +7,11 @@ body {
 .inicio{
   height: 100vh;
   width: 100%;
-  background-color: rgb(173, 169, 177);
+  background-color: #E7DFDD;
 }
 
 .header{
-  background-color: rgb(127, 127, 206);
+  background-color: #0e0b16;
   width: 100%;
   height: 80px;
   display: flex;
@@ -18,17 +19,205 @@ body {
   justify-content: space-evenly;
   align-items: center;
 }
+
+.logo{
+  width: 250px;
+  height: 80px;
+  position: absolute;
+  margin-left: 5%;
+}
+
+.links{
+  width: 35%;
+  margin-left: -70%;
+  position: absolute;
+}
+
+.link_login{
+  position: absolute;
+  margin-left: 70%;
+}
+
+.btnv {
+  font-family: 'Poppins', sans-serif;
+  background: #f76134;
+  color: #0e0b16;
+  cursor: pointer;
+  font-size: 22px;
+  padding: 0.4rem;
+  border: 0;
+  transition: all 1s;
+  border-radius: 10px;
+  position: relative;
+  min-width: 160px;
+  height: 45px;   
+  font-weight: 700;
+}
+.btnv:hover {
+  background: #4717f6;
+  transition: all 0.5s;
+  border-radius: 10px;
+  box-shadow: 0px 6px 15px #000f61;
+  padding: 0.4rem 3rem 1.5rem 1.5rem;
+  color: #fff;
+  position: relative;
+}
+
+.btnv:hover .entrar {
+  opacity: 1;
+  transition: 1S;
+}
+
+.entrar{
+  height: 30px; 
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  opacity: 0;
+}
+
+
 ul{
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   width: 500px;
   list-style: none;
 }
+
 a {
   text-decoration: none;
+  color: #E7DFDD;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  transition: 1s;
+}
+
+a:hover {
+  font-size: 22px;
+  color: #f76134;
+}
+
+.caiohideki{  
+  width: 80%;
+  height: 80%;
+  background-color: #0e0b16;
+  margin-left: 10%;
+  margin-top: 2%;
+  display: flex;
+  border-radius: 16px;
+}
+
+.texto_noticia{
+  width: 38%;
+  font-family: 'Poppins', sans-serif;
+  color: #E7DFDD;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.alinhar {
+  width: 80%;
+  margin-top: 15%;
+}
+.titulo_noticia{
+  font-size: 26px;
+  font-weight: 900;
+  margin-top: 15%;
+}
+
+.sub_titulo{
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 15%;
 }
 
 .carrosel {
-  height: 50%;
-  width: 50%;
+  height: 100%;
+  width: 62%;
+  display: flex;
+  float: right;
+}
+
+.img{
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+}
+
+.input_trocar{
+  width: 79%;
+  position: fixed;
+  margin-top: 480px;
+}
+
+.btn_ler {
+  font-family: 'Poppins', sans-serif;
+  background: #f76134;
+  color: #0e0b16;
+  cursor: pointer;
+  font-size: 22px;
+  padding: 0.4rem;
+  border: 0;
+  transition: all 1s;
+  border-radius: 10px;
+  position: relative;
+  min-width: 140px;
+  height: 45px;   
+  font-weight: 700;
+  margin-top: 10%;
+}
+.btn_ler:hover {
+  background: #4717f6;
+  transition: all 0.5s;
+  border-radius: 10px;
+  box-shadow: 0px 6px 15px #000f61;
+  padding: 0.4rem 3rem 1.5rem 1.5rem;
+  color: #fff;
+  position: relative;
+}
+
+.btn_ler:hover .entrar {
+  opacity: 1;
+  transition: 1S;
+}
+
+.range {
+  position: relative;
+}
+.range__input {
+  width: 100%;
+  -webkit-appearance: none;
+}
+.range__input::-webkit-slider-runnable-track {
+  background: #ccc;
+}
+.range__input::-moz-range-thumb {
+  background: #ccc;
+}
+.range__input::-ms-track {
+  background: transparent;
+}
+.range__input::-ms-fill-lower {
+  background: #e1e1e1;
+  border-radius: 10px;
+}
+.range__input::-ms-fill-upper {
+  background: #eee;
+}
+.range__list {
+  display: flex;
+  justify-content: space-between;
+  height: auto;
+  overflow: hidden;
+  margin-top: 16px;
+}
+.range__list__opt:before {
+  content: '';
+  display: block;
+  width: 0;
+  height: auto;
+  padding-left: 3px;
+  text-indent: 0;
 }

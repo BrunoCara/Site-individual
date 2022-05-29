@@ -11,35 +11,93 @@
 <body>
     <section class="inicio" id="inicio">
       <div class="header">
-        <img src="img/logo2.png" alt="">
+        <div class="links">
         <nav>
           <ul>
             <li id="homeli"><a href="#home">Home</a></li>
             <li id="jogosli"><a href="#Noticias">Noticias</a></li>
-            <li id="quemli"><a href="#quemsomos">Quem Somos</a></li>
-            <li id="graficoli"><a href="#grafico">Gráfico</a></li>
+            <li id="quemli"><a href="#quemsomos">Curiosidades</a></li>
+            <li id="graficoli"><a href="#grafico">Votação</a></li>
           </ul>
         </nav>
+        </div>
+        <img src="img/logo2.png" alt="" class="logo">
+        <div class="link_login">
+          <button class="btnv">Login<img src="img/entrar.png" alt="" class="entrar"></button>
       </div>
-
-      <div class="carrosel"><img src="https://www.nbaportugal.com/wp-content/uploads/2021/02/curry_doncic1.jpg" alt="" id="doncic"></div>
+      </div>
+      <div class="caiohideki">
+        <input type="range" id="input_trocar" min="0" max="3" value="0" class="input_trocar" onchange="trocar()">
+        <div class="texto_noticia">
+          <div class="alinhar">
+          <span class="titulo_noticia" id="titulo_noticia">Acompanhe as principais noticias da NBA!</span>
+          <p class="sub_titulo" id="sub_titulo">Fique por dentro de todos os acontecimentos do mundo da bola laranja</p>
+          </div>
+          <button class="btn_ler" onclick="mudar_tela()">Ler<img src="img/entrar.png" alt="" class="entrar"></button>
+      
+        </div>
+      <div class="carrosel"><img src="img/not.jpg" alt="" id="carrosel" class="img"></div>
     </section>
-    
-    
 </body>
 </html>
 <script>
-  var lista_noticias = ["https://www.nbaportugal.com/wp-content/uploads/2021/02/curry_doncic1.jpg", "https://library.sportingnews.com/styles/crop_style_16_9_mobile_2x/s3/2021-08/tatum-butler-091720-ftr-gettyjpg_oxed48571olq1j0prplldfntz.jpg?itok=pH-km6_d", "https://clutchpoints.com/wp-content/uploads/2020/04/Stephen-Curry-_changed-the-game_-says-Jayson-Tatum.jpg"]
+  var lista_noticias = ["img/not1.jpg", "img/not2.jpg", "img/not3.jpg", "img/not4.jpg"]
 
+  var lista_titulo = ["Luka Doncic comanda vitória dos Mavericks Sobre os Warriors","Tatum se recupera, Celtics Empatam final do Leste","O que esperar da possivel final entre Celtics X Warriors","Nikola Jokic é eleito o MVP da temporada da NBA"]
 
-  setInterval(function () {trocar_imagem()}, 3000)
+  var lista_subtitulo = ["Armador tem a maior maior média de pontos da Liga em jogos de eliminação e entra para a história da NBA","Astro faz 31 pontos no jogo 4 depois de anotar 10 no jogo 3 Miami erra primeiros 14 arremessos e fica para trás já no primeiro quarto","Curry vai amassar o tatum chora jp chora jp chora jp chora jp chora jp chora jp","Nikola Jokic é de novo MVP da NBA. o pivô do Denver Nuggets foi o escolhido na votação feita pela liga e receberá o prêmio pelo segundo ano consecutivo."]
 
   var c = 0
+  var c1 = 0
+  var c2 = 0
+
+  var interval_imagem = setInterval(function () {trocar_imagem()}, 7000)
+
   function trocar_imagem(){
-    doncic.src = lista_noticias[c]
+    carrosel.src = lista_noticias[c]
+    input_trocar.value = c
     c++
-    if(c == 3){
+    if(c == 4){
       c = 0
+    }
+  }
+
+  var interval_titulo = setInterval(function () {trocar_titulo()}, 7000)
+  function trocar_titulo(){
+    titulo_noticia.innerHTML = lista_titulo[c1]
+    input_trocar.value = c1
+    c1++
+    if(c1 == 4){
+      c1 = 0
+    }
+  }
+
+  var interval_subtitulo = setInterval(function () {trocar_subtitulo()}, 7000)
+  function trocar_subtitulo(){
+    sub_titulo.innerHTML = lista_subtitulo[c2]
+    input_trocar.value = c2
+    c2++
+    if(c2 == 4){
+      c2 = 0
+    }
+  }
+
+  function trocar(){
+   var valor = Number(input_trocar.value)
+      carrosel.src = lista_noticias[valor.toFixed()]
+      titulo_noticia.innerHTML = lista_titulo[valor.toFixed()]
+      sub_titulo.innerHTML = lista_subtitulo[valor.toFixed()]
+      clearInterval(interval_imagem)
+      clearInterval(interval_titulo)
+      clearInterval(interval_subtitulo)
+  }
+  
+  function mudar_tela(){
+    if (input_trocar.value == 0){
+      window.location.href = "noticia1.html"
+    }
+    else if (input_trocar.value == 1){
+      window.location.href = "noticia2.html"
     }
   }
 </script>
