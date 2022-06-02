@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dunk News || Heat X Celtics</title>
+    <title>Dunk News || Dallas X Warriors</title>
     <link rel="stylesheet" href="css/noticia.css">
+    <script src="./js/home.js"></script>
 </head>
 <body>
     <section class="inicio" id="inicio">
@@ -13,9 +14,9 @@
           <div class="links">
           <nav>
             <ul>
-              <li id="homeli"><a href="#home">Home</a></li>
+              <li id="homeli"><a href="home.html">Home</a></li>
               <li id="jogosli"><a href="#Noticias">Noticias</a></li>
-              <li id="quemli"><a href="#quemsomos">Curiosidades</a></li>
+              <li id="quemli"><a href="home.html#curiosidades">Curiosidades</a></li>
               <li id="graficoli"><a href="#grafico">Votação</a></li>
             </ul>
           </nav>
@@ -40,15 +41,15 @@
         <div class="noticias">
             <div class="quebran"><br>
                 <span class="titulo"> Ultimas Noticias</span> <br>
-                <div class="not">
+                <div class="not" onclick="trocar_noticia1()">
                     <div class="imagem"><img src="img/not1.jpg" alt="" class="img1"></div>
                     <div class="texto"><div class="alinhar">Luka Doncic comanda vitória dos Mavericks </div></div>
                 </div>
-                <div class="not">
+                <div class="not" onclick="trocar_noticia3()">
                     <div class="imagem"><img src="img/not3.jpg" alt="" class="img1"></div>
                     <div class="texto"><div class="alinhar"> O que esperar da possivel final entre Celtics X Warriors </div></div>
                 </div>
-                <div class="not">
+                <div class="not" onclick="trocar_noticia4()">
                     <div class="imagem"><img src="img/not4.jpg" alt="" class="img1"></div>
                     <div class="texto"> <div class="alinhar"> Nikola Jokic é eleito o MVP da temporada da NBA </div></div>
                 </div>

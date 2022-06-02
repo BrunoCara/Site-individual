@@ -126,10 +126,17 @@ a:hover {
     margin-top: 2%;
 }
 .jt {
-    height: 400px;
-    width: 100%;
+    height: 450px;
+    width: 97%;
     border-radius: 12px;
+    transition: 0.5s;
 }
+
+.jt:hover {
+  height: 465px;
+  width: 100%;
+}
+
 .quebra{
     height: 100%;
     width: 80%;
@@ -167,6 +174,10 @@ a:hover {
     color: white;
     cursor: pointer;
     margin-bottom: 25%;
+}
+
+.not:hover {
+  color: #f76134;
 }
 
 .imagem{

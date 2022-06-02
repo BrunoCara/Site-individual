@@ -2,12 +2,12 @@
 body {
   padding: 0;
   margin: 0;
+    background-color: #E7DFDD;
 }
 
 .inicio{
   height: 100vh;
   width: 100%;
-  background-color: #E7DFDD;
 }
 
 .header{
@@ -18,6 +18,9 @@ body {
   flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
+  /* position: fixed;
+    z-index: 1;
+    transition: 1s; */
 }
 
 .logo{
@@ -106,6 +109,7 @@ a:hover {
   margin-top: 2%;
   display: flex;
   border-radius: 16px;
+  box-shadow: rgba(0, 15, 97,0.4) 5px 5px, rgba(0, 15, 97,0.3) 10px 10px, rgba(0, 15, 97,0.2) 15px 15px, rgba(0, 15, 97,0.1) 20px 20px, rgba(0, 15, 97,0.05) 25px 25px;
 }
 
 .texto_noticia{
@@ -148,7 +152,7 @@ a:hover {
 
 .input_trocar{
   width: 79%;
-  position: fixed;
+  position: absolute;
   margin-top: 480px;
 }
 
@@ -183,41 +187,358 @@ a:hover {
   transition: 1S;
 }
 
-.range {
-  position: relative;
-}
-.range__input {
-  width: 100%;
-  -webkit-appearance: none;
-}
-.range__input::-webkit-slider-runnable-track {
-  background: #ccc;
-}
-.range__input::-moz-range-thumb {
-  background: #ccc;
-}
-.range__input::-ms-track {
-  background: transparent;
-}
-.range__input::-ms-fill-lower {
-  background: #e1e1e1;
-  border-radius: 10px;
-}
-.range__input::-ms-fill-upper {
-  background: #eee;
-}
-.range__list {
+/* Curiosidades */
+.cr {
+  margin-top: 10%;
+  margin-bottom: 2%;
   display: flex;
-  justify-content: space-between;
-  height: auto;
-  overflow: hidden;
-  margin-top: 16px;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 38px;
 }
-.range__list__opt:before {
-  content: '';
-  display: block;
-  width: 0;
-  height: auto;
-  padding-left: 3px;
-  text-indent: 0;
+.curiosidades{
+  height: 100vh;
+  width: 100%;
+  background-color: #E7DFDD;
+}
+.quaresma{  
+  width: 80%;
+  height: 80%;
+  background-color: #0e0b16;
+  margin-left: 10%;
+  margin-top: 2%;
+  display: flex;
+  border-radius: 16px;
+  box-shadow: rgba(0, 15, 97,0.4) 5px 5px, rgba(0, 15, 97,0.3) 10px 10px, rgba(0, 15, 97,0.2) 15px 15px, rgba(0, 15, 97,0.1) 20px 20px, rgba(0, 15, 97,0.05) 25px 25px;
+}
+
+.texto_curiosidade{
+  width: 38%;
+  font-family: 'Poppins', sans-serif;
+  color: #E7DFDD;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.alinhar_curiosidade {
+  width: 80%;
+  margin-top: 15%;
+}
+.titulo_curiosidade{
+  font-size: 26px;
+  font-weight: 900;
+  margin-top: 15%;
+}
+
+.sub_titulo_curiosidade{
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 15%;
+}
+
+.carrosel_curiosidade {
+  height: 100%;
+  width: 62%;
+  display: flex;
+  float: right;
+}
+
+.img{
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+}
+
+.input_trocar_curiosidade{
+  width: 79%;
+  position: absolute;
+  margin-top: 480px;
+}
+
+.input_trocar{
+  width: 79%;
+  position: absolute;
+  margin-top: 480px;
+}
+
+/* Votação */
+.votacao{
+  height: 130vh;
+  width: 100%;
+  background-color: #E7DFDD;
+}
+
+.jp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.time_fav {
+  font-family: 'Poppins', sans-serif;
+  font-size: 26px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: 600;
+}
+.conf{
+  margin-left: 20px;
+  height: 30px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+.lucas{
+  margin-left: 20px;
+  height: 30px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+.conf_leste{
+  margin-left: 650px;
+  height: 30px;
+  width: 140px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+.conf_oeste{
+  margin-left: 650px;
+  height: 30px;
+  width: 140px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+.suns{
+  background-color: #f9a01b;
+  font-size: 22px;
+  color: white;
+}
+.grizzlies{
+  background-color: #5d76a9;
+  font-size: 22px;
+  color: white;
+}
+.warriors{
+  background-color: #fdb927;
+  font-size: 22px;
+  color: white;
+}
+.mavs{
+  background-color: #006bb6;
+  font-size: 22px;
+  color: white;
+}
+.jazz{
+  background-color: #002a5b;
+  font-size: 22px;
+  color: white;
+}
+.nuggets{
+  background-color: white;
+  font-size: 22px;
+  color: black;
+}
+.wolves{
+  background-color: #002a5c;
+  font-size: 22px;
+  color: white;
+}
+.pelicans{
+  background-color: #ff1135;
+  font-size: 22px;
+  color: white;
+}
+.clippers{
+  background-color: #efefef;
+  font-size: 22px;
+  color: black;
+}
+.spurs{
+  background-color: #8e8f8f;
+  font-size: 22px;
+  color: white;
+}
+.lakers{
+  background-color: #542084;
+  font-size: 22px;
+  color: white;
+}
+.blazers{
+  background-color: #d00328;
+  font-size: 22px;
+  color: white;
+}
+.kings{
+  background-color: #5b2b82;
+  font-size: 22px;
+  color: white;
+}
+.thunder{
+  background-color: #f05333;
+  font-size: 22px;
+  color: white;
+}
+.rockets{
+  background-color: #cd1141;
+  font-size: 22px;
+  color: white;
+}
+.heat{
+  background-color: #98002e;
+  font-size: 22px;
+  color: white;
+}
+.celtics{
+  background-color: #078449;
+  font-size: 22px;
+  color: white;
+}
+.ers{
+  background-color: #006bb7;
+  font-size: 22px;
+  color: white;
+}
+.bucks{
+  background-color: #00471b;
+  font-size: 22px;
+  color: white;
+}
+.bulls{
+  background-color: #d2153a;
+  font-size: 22px;
+  color: white;
+}
+.nets{
+  background-color: #000000;
+  font-size: 22px;
+  color: white;
+}
+.hawks{
+  background-color: #cf0a2c;
+  font-size: 22px;
+  color: white;
+}
+.pacers{
+  background-color: #002d62;
+  font-size: 22px;
+  color: white;
+}
+.cavs{
+  background-color: #6a0832;
+  font-size: 22px;
+  color: white;
+}
+.hornets{
+  background-color: #008da8;
+  font-size: 22px;
+  color: rgb(0, 0, 0);
+}
+.raptors{
+  background-color: #be141b;
+  font-size: 22px;
+  color: white;
+}
+.knicks{
+  background-color: #f78429;
+  font-size: 22px;
+  color: rgb(0, 0, 0);
+}
+.wizards{
+  background-color: #002b5c;
+  font-size: 22px;
+  color: white;
+}
+.pistons{
+  background-color: #0d4c93;
+  font-size: 22px;
+  color: white;
+}
+.magic{
+  background-color: #0074bd;
+  font-size: 22px;
+  color: white;
+}
+
+.alinhamento{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  margin-top: 2%;
+  height: 80%;
+  width: 100%;
+}
+
+.dunks{
+  height: 100%;
+  width: 100%;
+  background-color: rgb(226, 244, 234);
+}
+
+.alinhar_titulo{
+  font-family: 'Poppins', sans-serif;
+  margin-top: 2%;
+  font-size: 28px;
+  font-weight: 700; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nome_dunk{
+  height: 10%;
+  width: 100%;
+  margin-top: 2%; 
+}
+.primeira_linha{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nome_dunk1{
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  font-weight: 700; 
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  margin-bottom: -2%;
+}
+.nome_dunk2{
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  font-weight: 700; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  margin-bottom: -2%;
+}
+.dunk1{
+  width: 690px;
+  height: 420px;
+  margin-left: 1%;
+}
+.video1{
+  height: 100%;
+  width: 100%;
+}
+
+.segunda_linha{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nome_dunk_{
+  height: 10%;
+  width: 100%;
 }
