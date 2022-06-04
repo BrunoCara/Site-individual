@@ -1,0 +1,739 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@300&family=Red+Hat+Display&display=swap');
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #E7DFDD;
+}
+
+.inicio{
+  height: 100vh;
+  width: 100%;
+  padding-top: 120px;
+}
+
+.header{
+  background-color: #0e0b16;
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  position: fixed; 
+  z-index: 5;
+  transition: 1s; 
+}
+
+.alinhar_header{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  margin-left: -100px
+}
+
+.logo{
+  width: 250px;
+  height: 80px;
+}
+
+
+.btnv {
+  font-family: 'Poppins', sans-serif;
+  background: #f76134;
+  color: #0e0b16;
+  cursor: pointer;
+  font-size: 22px;
+  padding: 0.4rem;
+  border: 0;
+  transition: all 1s;
+  border-radius: 10px;
+  position: relative;
+  min-width: 160px;
+  height: 45px;   
+  font-weight: 700;
+  margin-left: 100px;
+}
+.btnv:hover {
+  background: #4717f6;
+  transition: all 0.5s;
+  border-radius: 10px;
+  box-shadow: 0px 6px 15px #000f61;
+  padding: 0.4rem 3rem 1.5rem 1.5rem;
+  color: #fff;
+  position: relative;
+}
+
+.btnv:hover .entrar {
+  opacity: 1;
+  transition: 1S;
+}
+
+.entrar{
+  height: 30px; 
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  opacity: 0;
+}
+
+
+ul{
+  display: flex;
+  justify-content: space-evenly;
+  width: 500px;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #E7DFDD;
+  font-family: 'Poppins', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  transition: 1s;
+}
+
+a:hover {
+  font-size: 22px;
+  color: #f76134;
+}
+
+.caiohideki{  
+  width: 80%;
+  height: 80%;
+  background-color: #0e0b16;
+  margin-left: 10%;
+  display: flex;
+  border-radius: 16px;
+  box-shadow: rgba(0, 15, 97,0.4) 5px 5px, rgba(0, 15, 97,0.3) 10px 10px, rgba(0, 15, 97,0.2) 15px 15px, rgba(0, 15, 97,0.1) 20px 20px, rgba(0, 15, 97,0.05) 25px 25px;
+}
+
+.texto_noticia{
+  width: 38%;
+  font-family: 'Poppins', sans-serif;
+  color: #E7DFDD;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.alinhar {
+  width: 80%;
+  margin-top: 15%;
+}
+.titulo_noticia{
+  font-size: 26px;
+  font-weight: 900;
+  margin-top: 15%;
+}
+
+.sub_titulo{
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 15%;
+}
+
+.carrosel {
+  height: 100%;
+  width: 62%;
+  display: flex;
+  float: right;
+}
+
+.img{
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+}
+
+
+.btn_ler {
+  font-family: 'Poppins', sans-serif;
+  background: #f76134;
+  color: #0e0b16;
+  cursor: pointer;
+  font-size: 22px;
+  padding: 0.4rem;
+  border: 0;
+  transition: all 1s;
+  border-radius: 10px;
+  position: relative;
+  min-width: 140px;
+  height: 45px;   
+  font-weight: 700;
+  margin-top: 10%;
+}
+.btn_ler:hover {
+  background: #4717f6;
+  transition: all 0.5s;
+  border-radius: 10px;
+  box-shadow: 0px 6px 15px #000f61;
+  padding: 0.4rem 3rem 1.5rem 1.5rem;
+  color: #fff;
+  position: relative;
+}
+
+.btn_ler:hover .entrar {
+  opacity: 1;
+  transition: 1S;
+}
+
+/* Curiosidades */
+.cr {
+  margin-top: 10%;
+  margin-bottom: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 38px;
+}
+.curiosidades{
+  height: 120vh;
+  width: 100%;
+  background-color: #0e0b16;
+  color: #E7DFDD;
+}
+.quaresma{  
+  width: 80%;
+  height: 65%;
+  background-color: #E7DFDD;
+  margin-left: 10%;
+  margin-top: 5%;
+  display: flex;
+  border-radius: 16px;
+  box-shadow: rgba(0, 15, 97,0.4) 5px 5px, rgba(0, 15, 97,0.3) 10px 10px, rgba(0, 15, 97,0.2) 15px 15px, rgba(0, 15, 97,0.1) 20px 20px, rgba(0, 15, 97,0.05) 25px 25px;
+}
+
+.texto_curiosidade{
+  width: 38%;
+  font-family: 'Poppins', sans-serif;
+  color: #0e0b16;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.alinhar_curiosidade {
+  width: 80%;
+  margin-top: 15%;
+}
+.titulo_curiosidade{
+  font-size: 26px;
+  font-weight: 900;
+  margin-top: 15%;
+}
+
+.sub_titulo_curiosidade{
+  font-size: 16px;
+  font-weight: 500;
+  margin-top: 15%;
+}
+
+.carrosel_curiosidade {
+  height: 100%;
+  width: 62%;
+  display: flex;
+  float: right;
+}
+
+.img{
+  width: 100%;
+  height: 100%;
+  border-radius: 16px;
+}
+
+.input_trocar_curiosidade{
+  width: 79%;
+  position: absolute;
+  margin-top: 470px;
+}
+
+.input_trocar{
+  width: 79%;
+  position: absolute;
+  margin-top: 480px;
+}
+
+.separar{
+  width: 100%;
+  height: 20vh;
+}
+
+/* Votação */
+.votacao{
+  height: 300vh;
+  width: 100%;
+}
+
+.vt {
+  margin-bottom: 2%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 38px;
+}
+
+.jp {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.time_fav {
+  font-family: 'Poppins', sans-serif;
+  font-size: 26px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: 600;
+}
+.conf{
+  margin-left: 20px;
+  height: 30px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+.lucas{
+  margin-left: 20px;
+  height: 30px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+.conf_leste{
+  margin-left: 650px;
+  height: 30px;
+  width: 140px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+.conf_oeste{
+  margin-left: 650px;
+  height: 30px;
+  width: 140px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+.suns{
+  background-color: #f9a01b;
+  font-size: 22px;
+  color: white;
+}
+.grizzlies{
+  background-color: #5d76a9;
+  font-size: 22px;
+  color: white;
+}
+.warriors{
+  background-color: #fdb927;
+  font-size: 22px;
+  color: white;
+}
+.mavs{
+  background-color: #006bb6;
+  font-size: 22px;
+  color: white;
+}
+.jazz{
+  background-color: #002a5b;
+  font-size: 22px;
+  color: white;
+}
+.nuggets{
+  background-color: white;
+  font-size: 22px;
+  color: black;
+}
+.wolves{
+  background-color: #002a5c;
+  font-size: 22px;
+  color: white;
+}
+.pelicans{
+  background-color: #ff1135;
+  font-size: 22px;
+  color: white;
+}
+.clippers{
+  background-color: #efefef;
+  font-size: 22px;
+  color: black;
+}
+.spurs{
+  background-color: #8e8f8f;
+  font-size: 22px;
+  color: white;
+}
+.lakers{
+  background-color: #542084;
+  font-size: 22px;
+  color: white;
+}
+.blazers{
+  background-color: #d00328;
+  font-size: 22px;
+  color: white;
+}
+.kings{
+  background-color: #5b2b82;
+  font-size: 22px;
+  color: white;
+}
+.thunder{
+  background-color: #f05333;
+  font-size: 22px;
+  color: white;
+}
+.rockets{
+  background-color: #cd1141;
+  font-size: 22px;
+  color: white;
+}
+.heat{
+  background-color: #98002e;
+  font-size: 22px;
+  color: white;
+}
+.celtics{
+  background-color: #078449;
+  font-size: 22px;
+  color: white;
+}
+.ers{
+  background-color: #006bb7;
+  font-size: 22px;
+  color: white;
+}
+.bucks{
+  background-color: #00471b;
+  font-size: 22px;
+  color: white;
+}
+.bulls{
+  background-color: #d2153a;
+  font-size: 22px;
+  color: white;
+}
+.nets{
+  background-color: #000000;
+  font-size: 22px;
+  color: white;
+}
+.hawks{
+  background-color: #cf0a2c;
+  font-size: 22px;
+  color: white;
+}
+.pacers{
+  background-color: #002d62;
+  font-size: 22px;
+  color: white;
+}
+.cavs{
+  background-color: #6a0832;
+  font-size: 22px;
+  color: white;
+}
+.hornets{
+  background-color: #008da8;
+  font-size: 22px;
+  color: rgb(0, 0, 0);
+}
+.raptors{
+  background-color: #be141b;
+  font-size: 22px;
+  color: white;
+}
+.knicks{
+  background-color: #f78429;
+  font-size: 22px;
+  color: rgb(0, 0, 0);
+}
+.wizards{
+  background-color: #002b5c;
+  font-size: 22px;
+  color: white;
+}
+.pistons{
+  background-color: #0d4c93;
+  font-size: 22px;
+  color: white;
+}
+.magic{
+  background-color: #0074bd;
+  font-size: 22px;
+  color: white;
+}
+
+.alinhamento{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2%;
+  height: 53%;
+  width: 100%;
+}
+
+.dunks{
+  height: 100%;
+  width: 100%;
+}
+
+.alinhar_titulo{
+  font-family: 'Poppins', sans-serif;
+  margin-top: 2%;
+  font-size: 28px;
+  font-weight: 700; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nome_dunk{
+  height: 5%;
+  width: 100%;
+  margin-top: 4%; 
+}
+.primeira_linha{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nome_dunk1{
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  font-weight: 700; 
+  float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+
+}
+.nome_dunk2{
+  font-family: 'Poppins', sans-serif;
+  font-size: 22px;
+  font-weight: 700; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  margin-top: -3%;
+
+}
+.dunk1{
+  width: 690px;
+  height: 420px;
+  margin-left: 1%;
+}
+.video1{
+  height: 100%;
+  width: 100%;
+}
+
+.segunda_linha{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nome_dunk_{
+  height: 8%;
+  width: 100%;
+}
+
+.alinhar_botao{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.btn_votar {
+  font-family: 'Poppins', sans-serif;
+  background: #f76134;
+  color: #0e0b16;
+  cursor: pointer;
+  font-size: 22px;
+  padding: 0.4rem;
+  border: 0;
+  transition: all 1s;
+  border-radius: 10px;
+  position: relative;
+  min-width: 140px;
+  height: 45px;   
+  font-weight: 700;
+}
+.btn_votar:hover {
+  background: #4717f6;
+  transition: all 0.5s;
+  border-radius: 10px;
+  box-shadow: 0px 6px 15px #000f61;
+  padding: 0.4rem 3rem 1.5rem 1.5rem;
+  color: #fff;
+  position: relative;
+}
+
+.btn_votar:hover .entrar {
+  opacity: 1;
+  transition: 1S;
+}
+
+.div_link{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
+  font-size: 26px;
+}
+
+.input_link{
+  margin-left: 10px;
+  height: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  width: 180px;
+}
+
+.btn_enviar {
+  margin-left: 2%;
+  font-family: 'Poppins', sans-serif;
+  background: #f76134;
+  color: #0e0b16;
+  cursor: pointer;
+  font-size: 22px;
+  padding: 0.15rem;
+  border: 0;
+  transition: all 1s;
+  border-radius: 10px;
+  position: relative;
+  min-width: 138px;
+  height: 35px;   
+  font-weight: 700;
+}
+.btn_enviar:hover {
+  background: #4717f6;
+  transition: all 0.5s;
+  border-radius: 10px;
+  box-shadow: 0px 6px 15px #000f61;
+  padding: 0.15rem 3rem 1.5rem 1.5rem;
+  color: #fff;
+  position: relative;
+}
+
+.btn_enviar:hover .entrar {
+  opacity: 1;
+  transition: 1S;
+}
+
+.btn_enviados {
+  margin-left: 2%;
+  font-family: 'Poppins', sans-serif;
+  background: #f76134;
+  color: #0e0b16;
+  cursor: pointer;
+  font-size: 22px;
+  padding: 0.15rem;
+  border: 0;
+  transition: all 1s;
+  border-radius: 10px;
+  position: relative;
+  min-width: 252px;
+  height: 35px;   
+  font-weight: 700;
+}
+.btn_enviados:hover {
+  background: #4717f6;
+  transition: all 0.5s;
+  border-radius: 10px;
+  box-shadow: 0px 6px 15px #000f61;
+  padding: 0.15rem 3rem 1.5rem 1.5rem;
+  color: #fff;
+  position: relative;
+}
+
+.btn_enviados:hover .entrar {
+  opacity: 1;
+  transition: 1S;
+}
+
+.alinhar_dunk_usuario{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 5%;
+}
+.span_dunk{
+  font-family: 'Poppins', sans-serif;
+  color: #0e0b16;
+  font-size: 22px;
+}
+
+.dunk_usuario{
+  height: 400px;
+  width: 70%;
+  background-color: burlywood;
+}
+
+.dash{
+  height: 170vh;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  background-color: #0e0b16;
+}
+
+.centro{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.titulo_dash{
+  font-size: 28px;
+  font-weight: 900;
+  margin-top: 5%;
+  color: #E7DFDD;
+}
+
+.div_conf{
+width: 100%;
+height: 45%;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-top: 5%;
+}
+
+.div_total{
+  width: 60vw;
+  height: 60vh;
+}
+
+.centro_pizza{
+  display: flex;
+  justify-content: center;
+  width: 70%;
+  margin-top: 5%;
+  height: 480px;
+  background-color: #E7DFDD;
+}
+
+.div_dunk{
+  width: 30vw;
+  height: 30vh;
+}
+
+.centralizando {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dunk News || Login</title>
+	<link rel="stylesheet" href="css/login.css">
+	<script src="./js/funcoes.js"></script>
+</head>
+<body>
+	<div class="form">
+		<img src="img/logo2.png" alt="" class="logo">
+		<div class="titulo">Bem vindo</div>
+		<div class="subtitulo">Entre na sua conta!</div>
+		<div class="input-container">
+		  <input id="email" class="input" type="text" placeholder=" " />
+		  <div class="div_input"></div>
+		  <label for="email" class="placeholder">Email</label>
+		</div>
+		<div class="input-container">
+		  <input id="senha" class="input" type="password" placeholder=" " />
+		  <div class="div_input"></div>
+		  <label for="senha" class="placeholder">Senha</div>
+			<div class="login">
+				<button class="btn" onclick="entrar()">Login<img src="img/entrar.png" alt="" class="entrar"></button>
+			</div>
+	  </div>
+</body>
+</html>
+<script>
+	function entrar() {
+
+          var emailVar = email.value;
+        var senhaVar = senha.value;
+
+        if (emailVar == "" || senhaVar == "") {
+            alert("Preencha todos os campos!")
+        }
+
+        console.log("FORM LOGIN: ", emailVar);
+        console.log("FORM SENHA: ", senhaVar);
+
+        fetch("/usuarios/autenticar", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                emailServer: emailVar,
+                senhaServer: senhaVar
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id_usuario;
+
+                    setTimeout(function () {
+                        window.location = "home.html";
+                    }, 1000); // apenas para exibir o loading
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+    }
+</script>

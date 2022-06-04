@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dunk News</title>
+  <link rel="stylesheet" href="css/home.css">
+  <script src="./js/home.js"></script>
+  <script src="js/grafico.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body onload="votos(), voto_dunk(), pegar_link(), plotar_usuario()">
+  <div class="header" id="header">
+    <div class="alinhar_header">
+      <nav>
+        <ul>
+          <li><a href="#inicio" id="a_not">Noticias</a></li>
+          <li><a href="#curiosidades" id="a_cr">Curiosidades</a></li>
+          <li><a href="#votacao" id="a_vot">Votação</a></li>
+          <li><a href="#resultado" id="a_result">Resultados</a></li>
+        </ul>
+      </nav>
+      <img src="img/logo2.png" alt="" class="logo">
+      <div class="link_login">
+        <a href="login.html"><button class="btnv">Login<img src="img/entrar.png" alt="" class="entrar"></button></a>
+      </div>
+    </div>
+  </div>
+  <section class="inicio" id="inicio">
+    <div class="caiohideki">
+      <input type="range" id="input_trocar" min="0" max="3" value="0" class="input_trocar" onchange="trocar()"
+        step="any">
+      <div class="texto_noticia">
+        <div class="alinhar">
+          <span class="titulo_noticia" id="titulo_noticia">Acompanhe as principais noticias da NBA!</span>
+          <p class="sub_titulo" id="sub_titulo">Fique por dentro de todos os acontecimentos do mundo da bola laranja</p>
+        </div>
+        <button class="btn_ler" onclick="mudar_tela()">Ler<img src="img/entrar.png" alt="" class="entrar"></button>
+
+      </div>
+      <div class="carrosel"><img src="img/not.jpg" alt="" id="carrosel" class="img"></div>
+    </div>
+  </section>
+
+  <section class="curiosidades" id="curiosidades">
+    <div class="cr"> <span style="font-weight: 900; margin-top: 5%;">Curiosidades:</span></div>
+
+    <div class="quaresma">
+      <input type="range" id="input_trocar_curiosidade" min="0" max="3" value="0" class="input_trocar_curiosidade"
+        step="any" onchange="trocar_curiosidade()">
+      <div class="texto_curiosidade">
+        <div class="alinhar_curiosidade">
+          <span class="titulo_curiosidade" id="titulo_curiosidade">Saiba das melhores Curiosidades sobre a nba e o
+            basquete em geral!</span>
+          <p class="sub_titulo_curiosidade" id="sub_titulo_curiosidade">Fique por dentro de todos os acontecimentos do
+            mundo da bola laranja</p>
+        </div>
+        <button class="btn_ler" onclick="mudar_tela_curiosidade()">Ler<img src="img/entrar.png" alt=""
+            class="entrar"></button>
+
+      </div>
+      <div class="carrosel_curiosidade"><img src="img/uiui.jpg" alt="" id="carrosel_curiosidade" class="img"></div>
+    </div>
+  </section>
+
+  <div class="separar" id="separar"></div>
+
+  <section class="votacao" id="votacao">
+    <div class="vt"> <span style="font-weight: 900;">Votações:</span></div>
+    <div class="jp">
+      <div class="time_fav">Selecione seu time favorito!
+        <select class="conf" id="conf" onclick="time()">
+          <option value="0">Conferência:</option>
+          <option value="1">Leste</option>
+          <option value="2">Oeste</option>
+        </select>
+        <select class="lucas" id="lucas">
+          <option>Selecione a Conferência:</option>
+        </select>
+        <select class="conf_leste" id="conf_leste" style="opacity: 0; z-index: -1; position: absolute;" name="time">
+          <option class="heat" value="Heat">Heat</option>
+          <option class="pistons" value="Pistons">Pistons</option>
+          <option class="celtics" value="Celtics">Celtics</option>
+          <option class="ers" value="76ers">76ers</option>
+          <option class="bucks" value="Bucks">Bucks</option>
+          <option class="bulls" value="Bulls">Bulls</option>
+          <option class="nets" value="Nets">Nets</option>
+          <option class="hawks" value="Hawks">Hawks</option>
+          <option class="pacers" value="Pacers">Pacers</option>
+          <option class="magic" value="Magic">Magic</option>
+          <option class="cavs" value="Cavs">Cavaliers</option>
+          <option class="hornets" value="Hornets">Hornets</option>
+          <option class="raptors" value="Raptors">Raptors</option>
+          <option class="knicks" value="Knicks">Knicks</option>
+          <option class="wizards" value="Wizards">Wizards</option>
+        </select>
+        <select class="conf_oeste" id="conf_oeste" style="opacity: 0; z-index: -1; position: absolute;" name="time">
+          <option class="suns" value="Suns">Suns</option>
+          <option class="grizzlies" value="Grizzlies">Grizzlies</option>
+          <option class="warriors" value="Warriors">Warriors</option>
+          <option class="mavs" value="Mavs">Mavericks</option>
+          <option class="jazz" value="Jazz">Jazz</option>
+          <option class="nuggets" value="Nuggets">Nuggets</option>
+          <option class="wolves" value="Wolves">Wolves</option>
+          <option class="pelicans" value="Pelicans">Pelicans</option>
+          <option class="clippers" value="Clippers">Clippers</option>
+          <option class="spurs" value="Spurs">Spurs</option>
+          <option class="lakers" value="Lakers">Lakers</option>
+          <option class="blazers" value="Blazers">Blazers</option>
+          <option class="kings" value="Kings">Kings</option>
+          <option class="thunder" value="Thunder">Thunder</option>
+          <option class="rockets" value="Rockets">Rockets</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="alinhamento">
+      <form class="dunks" id="form_dunk">
+        <div class="alinhar_titulo">
+          <span class="titulo_dunk">Vote na melhor dunk da temporada!</span>
+        </div>
+        <div class="nome_dunk">
+          <div class="nome_dunk1"><span style="border-bottom: 1px black solid;">Andrew Wiggins</span>
+            <input type="radio" style="margin-left: 2%;" name="bzs" id="wiggins">
+          </div>
+          <div class="nome_dunk2"><span style="border-bottom: 1px black solid;">Russel Westbrook</span>
+            <input type="radio" style="margin-left: 2%;" name="bzs" id="russ">
+          </div>
+        </div>
+        <div class="primeira_linha">
+          <div class="dunk1">
+            <div class="div_video"><video class="video1" controls="controls">
+                <source src="img/video1.mp4" type="video/mp4">
+            </div>
+          </div>
+
+          <div class="dunk1">
+            <div class="div_video"><video class="video1" controls="controls">
+                <source src="img/video2.mp4" type="video/mp4">
+            </div>
+          </div>
+        </div>
+
+        <div class="nome_dunk_">
+          <div class="nome_dunk1"><span style="border-bottom: 1px black solid; z-index: 1;">Ja Morant</span>
+            <input type="radio" style="margin-left: 2%; z-index: 1;" name="bzs" id="morant">
+          </div>
+          <div class="nome_dunk2"><span style="border-bottom: 1px black solid;">Anthony Edwards</span>
+            <input type="radio" style="margin-left: 2%;" name="bzs" id="edwards">
+          </div>
+        </div>
+        <div class="segunda_linha">
+          <div class="dunk1">
+            <div class="div_video"><video class="video1" controls="controls">
+                <source src="img/video3.mp4" type="video/mp4">
+            </div>
+          </div>
+
+          <div class="dunk1">
+            <div class="div_video"><video class="video1" controls="controls">
+                <source src="img/video4.mp4" type="video/mp4">
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="alinhar_botao">
+      <button class="btn_votar" onclick="votar()">Votar<img src="img/voto.png" alt="" class="entrar"></button>
+    </div>
+
+    <div class="alinhar_dunk_usuario">
+      <span class="span_dunk">Dunk de:</span>
+      <div class="dunk_usuario">
+        <div class="div_video"><iframe src="" frameborder="0" id="iframe"></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="div_link">
+      <span>Envie a sua Dunk!:</span> <input placeholder="Link do YouTube" class="input_link" id="input_link">
+      <button class="btn_enviar" onclick="mandar_link()">Enviar<img src="img/enviar.png" alt="" class="entrar"></button>
+    </div>
+  </section>
+
+
+  <section class="dash" id="dash">
+    <div class="centro">
+      <span class="titulo_dash">Resultados:</span>
+    </div>
+    <div class="centralizando">
+      <div class="div_conf">
+        <div class="div_total">
+          <canvas id="chart_leste"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="centralizando">
+      <div class="centro_pizza">
+        <div class="div_dunk">
+          <canvas id="chart_dunk"></canvas>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
+
+<script>
+
+
+  function votar() {
+
+    var select = conf.value
+    if (select == '1') {
+      var time_favVar = conf_leste.value
+    }
+    else if (select == '2') {
+      var time_favVar = conf_oeste.value
+    }
+    var fk_usuarioVar = sessionStorage.getItem('ID_USUARIO')
+    var dunk = document.getElementsByName('bzs');
+
+    for (i = 0; i < dunk.length; i++) {
+      if (dunk[i].checked)
+        var checkedVar = dunk[i].id
+    }
+    // Enviando o valor da nova input
+    fetch("/usuarios/votar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        time_favServer: time_favVar,
+        checkedServer: checkedVar,
+        fk_usuarioServer: fk_usuarioVar
+      })
+    }).then(function (resposta) {
+
+      console.log("resposta: ", resposta);
+    }).catch(function (resposta) {
+      console.log(`#ERRO: ${resposta}`);
+    });
+
+  }
+
+  /*   const myChart_oeste = new Chart(
+      document.getElementById('chart_oeste'),
+      config_oeste
+    ); */
+
+  var qtd_votos1 = 0;
+  var qtd_votos2 = 0;
+  var qtd_votos3 = 0;
+  var qtd_votos4 = 0;
+  var qtd_votos5 = 0;
+  var qtd_votos6 = 0;
+  var qtd_votos7 = 0;
+  var qtd_votos8 = 0;
+  var qtd_votos9 = 0;
+  var qtd_votos10 = 0;
+  var qtd_votos11 = 0;
+  var qtd_votos12 = 0;
+  var qtd_votos13 = 0;
+  var qtd_votos14 = 0;
+  var qtd_votos15 = 0;
+  var qtd_votos16 = 0;
+  var qtd_votos17 = 0;
+  var qtd_votos18 = 0;
+  var qtd_votos19 = 0;
+  var qtd_votos20 = 0;
+  var qtd_votos21 = 0;
+  var qtd_votos22 = 0;
+  var qtd_votos23 = 0;
+  var qtd_votos24 = 0;
+  var qtd_votos25 = 0;
+  var qtd_votos26 = 0;
+  var qtd_votos27 = 0;
+  var qtd_votos28 = 0;
+  var qtd_votos29 = 0;
+  var qtd_votos30 = 0;
+  var qtd_votos31 = 0;
+  var qtd_votos32 = 0;
+
+
+
+  var time1 = "";
+  var time2 = "";
+  var time3 = "";
+  var time4 = "";
+  var time5 = "";
+  var time6 = "";
+  var time7 = "";
+  var time8 = "";
+  var time9 = "";
+  var time10 = "";
+  var time11 = "";
+  var time12 = "";
+  var time13 = "";
+  var time14 = "";
+  var time15 = "";
+  var time16 = "";
+  var time17 = "";
+  var time18 = "";
+  var time19 = "";
+  var time20 = "";
+  var time21 = "";
+  var time22 = "";
+  var time23 = "";
+  var time24 = "";
+  var time25 = "";
+  var time26 = "";
+  var time27 = "";
+  var time28 = "";
+  var time29 = "";
+  var time30 = "";
+  var time31 = "";
+  var time32 = "";
+  function votos() {
+    fetch("/usuarios/voto").then(function (resposta) {
+      if (resposta.ok) {
+        resposta.json().then(function (resposta) {
+          console.log("Dados recebidos: ", JSON.stringify(resposta));
+          var teste = resposta
+          qtd_votos1 = resposta[0].vezes_votadas;
+          time1 = resposta[0].time_fav;
+
+          if (resposta[1]) {
+            qtd_votos2 = resposta[1].vezes_votadas;
+            time2 = resposta[1].time_fav;
+          }
+          if (resposta[2]) {
+            qtd_votos3 = resposta[2].vezes_votadas;
+            time3 = resposta[2].time_fav;
+          }
+          if (resposta[3]) {
+            qtd_votos4 = resposta[3].vezes_votadas;
+            time4 = resposta[3].time_fav;
+          }
+          if (resposta[4]) {
+            qtd_votos5 = resposta[4].vezes_votadas;
+            time5 = resposta[4].time_fav;
+          }
+          if (resposta[5]) {
+            qtd_votos6 = resposta[5].vezes_votadas;
+            time6 = resposta[5].time_fav;
+          }
+          if (resposta[6]) {
+            qtd_votos7 = resposta[6].vezes_votadas;
+            time7 = resposta[6].time_fav;
+          }
+          if (resposta[7]) {
+            qtd_votos8 = resposta[7].vezes_votadas;
+            time8 = resposta[7].time_fav;
+          }
+          if (resposta[8]) {
+            qtd_votos9 = resposta[8].vezes_votadas;
+            time9 = resposta[8].time_fav;
+          }
+          if (resposta[9]) {
+            qtd_votos10 = resposta[9].vezes_votadas;
+            time10 = resposta[9].time_fav;
+          }
+          if (resposta[10]) {
+            qtd_votos11 = resposta[10].vezes_votadas;
+            time11 = resposta[10].time_fav;
+          }
+          if (resposta[11]) {
+            qtd_votos12 = resposta[11].vezes_votadas;
+            time12 = resposta[11].time_fav;
+          }
+          if (resposta[12]) {
+            qtd_votos13 = resposta[12].vezes_votadas;
+            time13 = resposta[12].time_fav;
+          }
+          if (resposta[13]) {
+            qtd_votos14 = resposta[13].vezes_votadas;
+            time14 = resposta[13].time_fav;
+          }
+          if (resposta[14]) {
+            qtd_votos15 = resposta[14].vezes_votadas;
+            time15 = resposta[14].time_fav;
+          }
+          if (resposta[15]) {
+            qtd_votos16 = resposta[15].vezes_votadas;
+            time16 = resposta[15].time_fav;
+          }
+          if (resposta[16]) {
+            qtd_votos17 = resposta[16].vezes_votadas;
+            time17 = resposta[16].time_fav;
+          }
+          if (resposta[17]) {
+            qtd_votos18 = resposta[17].vezes_votadas;
+            time18 = resposta[17].time_fav;
+          }
+          if (resposta[18]) {
+            qtd_votos19 = resposta[18].vezes_votadas;
+            time19 = resposta[18].time_fav;
+          }
+          if (resposta[19]) {
+            qtd_votos20 = resposta[19].vezes_votadas;
+            time20 = resposta[19].time_fav;
+          }
+          if (resposta[20]) {
+            qtd_votos21 = resposta[20].vezes_votadas;
+            time21 = resposta[20].time_fav;
+          }
+          if (resposta[21]) {
+            qtd_votos22 = resposta[21].vezes_votadas;
+            time22 = resposta[21].time_fav;
+          }
+          if (resposta[22]) {
+            qtd_votos23 = resposta[22].vezes_votadas;
+            time23 = resposta[22].time_fav;
+          }
+          if (resposta[23]) {
+            qtd_votos24 = resposta[23].vezes_votadas;
+            time24 = resposta[23].time_fav;
+          }
+          if (resposta[24]) {
+            qtd_votos25 = resposta[24].vezes_votadas;
+            time25 = resposta[24].time_fav;
+          }
+          if (resposta[25]) {
+            qtd_votos26 = resposta[25].vezes_votadas;
+            time26 = resposta[25].time_fav;
+          }
+          if (resposta[26]) {
+            qtd_votos27 = resposta[26].vezes_votadas;
+            time27 = resposta[26].time_fav;
+          }
+          if (resposta[27]) {
+            qtd_votos28 = resposta[27].vezes_votadas;
+            time28 = resposta[27].time_fav;
+          }
+          if (resposta[28]) {
+            qtd_votos29 = resposta[28].vezes_votadas;
+            time29 = resposta[28].time_fav;
+          }
+          if (resposta[29]) {
+            qtd_votos30 = resposta[29].vezes_votadas;
+            time30 = resposta[29].time_fav;
+          }
+          if (resposta[30]) {
+            qtd_votos31 = resposta[30].vezes_votadas;
+            time31 = resposta[30].time_fav;
+          }
+          if (resposta[31]) {
+            qtd_votos32 = resposta[31].vezes_votadas;
+            time32 = resposta[31].time_fav;
+          }
+          grafico()
+        });
+      } else {
+        throw ('Houve um erro na API!');
+      }
+    }).catch(function (resposta) {
+      console.error(resposta);
+    });
+  }
+  const labels = [
+  ];
+  function grafico() {
+    const data = {
+      labels: [],
+      datasets: [{
+        label: 'Times mais votados',
+        backgroundColor: '#00b3b3',
+        borderColor: '#777777',
+        data: [],
+      }]
+    }; data.labels.push(time1)
+    data.datasets[0].data.push(qtd_votos1)
+
+    if (qtd_votos2 > 0) {
+      data.labels.push(time2)
+      data.datasets[0].data.push(qtd_votos2)
+    }
+    if (qtd_votos3 > 0) {
+      data.labels.push(time3)
+      data.datasets[0].data.push(qtd_votos3)
+    }
+    if (qtd_votos4 > 0) {
+      data.labels.push(time4)
+      data.datasets[0].data.push(qtd_votos4)
+    }
+    if (qtd_votos5 > 0) {
+      data.labels.push(time5)
+      data.datasets[0].data.push(qtd_votos5)
+    }
+    if (qtd_votos6 > 0) {
+      data.labels.push(time6)
+      data.datasets[0].data.push(qtd_votos6)
+    }
+    if (qtd_votos7 > 0) {
+      data.labels.push(time7)
+      data.datasets[0].data.push(qtd_votos7)
+    }
+    if (qtd_votos8 > 0) {
+      data.labels.push(time8)
+      data.datasets[0].data.push(qtd_votos8)
+    }
+    if (qtd_votos9 > 0) {
+      data.labels.push(time9)
+      data.datasets[0].data.push(qtd_votos9)
+    }
+    if (qtd_votos10 > 0) {
+      data.labels.push(time10)
+      data.datasets[0].data.push(qtd_votos10)
+    }
+    if (qtd_votos11 > 0) {
+      data.labels.push(time11)
+      data.datasets[0].data.push(qtd_votos11)
+    }
+    if (qtd_votos12 > 0) {
+      data.labels.push(time12)
+      data.datasets[0].data.push(qtd_votos12)
+    }
+    if (qtd_votos13 > 0) {
+      data.labels.push(time13)
+      data.datasets[0].data.push(qtd_votos13)
+    }
+    if (qtd_votos14 > 0) {
+      data.labels.push(time14)
+      data.datasets[0].data.push(qtd_votos14)
+    }
+    if (qtd_votos15 > 0) {
+      data.labels.push(time15)
+      data.datasets[0].data.push(qtd_votos15)
+    }
+    if (qtd_votos16 > 0) {
+      data.labels.push(time16)
+      data.datasets[0].data.push(qtd_votos16)
+    }
+    if (qtd_votos17 > 0) {
+      data.labels.push(time17)
+      data.datasets[0].data.push(qtd_votos17)
+    }
+    if (qtd_votos18 > 0) {
+      data.labels.push(time18)
+      data.datasets[0].data.push(qtd_votos18)
+    }
+    if (qtd_votos19 > 0) {
+      data.labels.push(time19)
+      data.datasets[0].data.push(qtd_votos19)
+    }
+    if (qtd_votos20 > 0) {
+      data.labels.push(time20)
+      data.datasets[0].data.push(qtd_votos20)
+    }
+    if (qtd_votos21 > 0) {
+      data.labels.push(time21)
+      data.datasets[0].data.push(qtd_votos21)
+    }
+    if (qtd_votos22 > 0) {
+      data.labels.push(time22)
+      data.datasets[0].data.push(qtd_votos22)
+    }
+    if (qtd_votos23 > 0) {
+      data.labels.push(time23)
+      data.datasets[0].data.push(qtd_votos23)
+    }
+    if (qtd_votos24 > 0) {
+      data.labels.push(time24)
+      data.datasets[0].data.push(qtd_votos24)
+    }
+    if (qtd_votos25 > 0) {
+      data.labels.push(time25)
+      data.datasets[0].data.push(qtd_votos25)
+    }
+    if (qtd_votos26 > 0) {
+      data.labels.push(time26)
+      data.datasets[0].data.push(qtd_votos26)
+    }
+    if (qtd_votos27 > 0) {
+      data.labels.push(time27)
+      data.datasets[0].data.push(qtd_votos27)
+    }
+    if (qtd_votos28 > 0) {
+      data.labels.push(time28)
+      data.datasets[0].data.push(qtd_votos28)
+    }
+    if (qtd_votos29 > 0) {
+      data.labels.push(time29)
+      data.datasets[0].data.push(qtd_votos29)
+    }
+    if (qtd_votos30 > 0) {
+      data.labels.push(time30)
+      data.datasets[0].data.push(qtd_votos30)
+    }
+    if (qtd_votos31 > 0) {
+      data.labels.push(time31)
+      data.datasets[0].data.push(qtd_votos31)
+    }
+    if (qtd_votos32 > 0) {
+      data.labels.push(time32)
+      data.datasets[0].data.push(qtd_votos32)
+    }
+
+    const config = {
+      type: 'bar',
+      data: data,
+      options: {}
+    };
+
+    const myChart_leste = new Chart(
+      document.getElementById('chart_leste'),
+      config
+    );
+  }
+
+  var votos_dunk1 = 0;
+  var votos_dunk2 = 0;
+  var votos_dunk3 = 0;
+  var votos_dunk4 = 0;
+
+  var nome_dunk1 = "";
+  var nome_dunk2 = "";
+  var nome_dunk3 = "";
+  var nome_dunk4 = "";
+
+  function voto_dunk(){
+  fetch("/usuarios/voto_dunk").then(function (resposta) {
+    if (resposta.ok) {
+
+      resposta.json().then(function (resposta) {
+        console.log("Dados recebidos: ", JSON.stringify(resposta));
+        var teste = resposta
+        votos_dunk1 = resposta[0].votado;
+        nome_dunk1 = resposta[0].dunk;
+
+        if (resposta[1]) {
+          votos_dunk2 = resposta[1].votado;
+          nome_dunk2 = resposta[1].dunk;
+        }
+        if (resposta[2]) {
+          votos_dunk3 = resposta[2].votado;
+          nome_dunk3 = resposta[2].dunk;
+        }
+        if (resposta[3]) {
+          votos_dunk4 = resposta[3].votado;
+          nome_dunk4 = resposta[3].dunk;
+        }
+
+
+        graficos1()
+      });
+    } else {
+      throw ('Houve um erro na API!');
+    }
+  }).catch(function (resposta) {
+    console.error(resposta);
+  });
+}
+  const labels_dunk = [
+  ];
+  function graficos1() {
+    const data_dunk = {
+      labels: [
+      ],
+      datasets: [{
+        title: 'Dunk do Ano',
+        data: [],
+        backgroundColor: [
+          'rgb(255, 99, 132)',
+          'rgb(54, 162, 235)',
+          'rgb(255, 205, 86)'
+        ],
+        hoverOffset: 4,
+        font: { weight: 'bold' }
+      }]
+    }; data_dunk.labels.push(nome_dunk1)
+    data_dunk.datasets[0].data.push(votos_dunk1)
+
+    if (votos_dunk2 > 0) {
+      data_dunk.labels.push(nome_dunk2)
+      data_dunk.datasets[0].data.push(votos_dunk2)
+    }
+    if (votos_dunk3 > 0) {
+      data_dunk.labels.push(nome_dunk3)
+      data_dunk.datasets[0].data.push(votos_dunk3)
+    }
+    if (votos_dunk4 > 0) {
+      data_dunk.labels.push(nome_dunk4)
+      data_dunk.datasets[0].data.push(votos_dunk4)
+    }
+
+    const config_dunk = {
+      type: 'pie',
+      data: data_dunk,
+      options: {
+        plugins: {
+          title: {
+            display: true,
+            text: 'Dunk do ano',
+            padding: {
+              top: 20,
+              bottom: 20
+            }
+          }
+
+        }
+      }
+    };
+
+    Chart.defaults.color = "#FFF"
+
+    const myChart_dunk = new Chart(
+      document.getElementById('chart_dunk'),
+      config_dunk
+    );
+  }
+</script>
