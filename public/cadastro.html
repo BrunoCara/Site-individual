@@ -99,7 +99,7 @@
 
 
 		</div>
-
+		<a href="login.html" style="text-decoration: none;"><span class="span_login">Ja tem cadastro? Faça login!</span></a>
 		<div class="login">
 			<button class="btn" onclick="cadastrar()">Cadastrar<img src="img/entrar.png" alt=""
 					class="entrar"></button>
@@ -205,8 +205,9 @@
         if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacao_senhaVar == "" || ruaVar == "" || cidadeVar == "" || bairroVar == "" || cepVar == "" ) {
             alert("Preencha todos os campos")
         }
-        // Enviando o valor da nova input
-        fetch("/usuarios/cadastrar", {
+
+		if(senhaVar == confirmacao_senhaVar){
+			fetch("/usuarios/cadastrar", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -238,4 +239,11 @@
 
         return false;
     }
+
+	else {
+		alert("Cadastro invalidos")
+	}
+		}
+        // Enviando o valor da nova input
+        
 </script>

@@ -23,6 +23,9 @@ body {
     transition: 1s; 
 }
 
+.home{
+  height: 60px;
+}
 .alinhar_header{
   display: flex;
   flex-direction: row;

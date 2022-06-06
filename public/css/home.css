@@ -204,7 +204,7 @@ a:hover {
   margin-top: 5%;
   display: flex;
   border-radius: 16px;
-  box-shadow: rgba(0, 15, 97,0.4) 5px 5px, rgba(0, 15, 97,0.3) 10px 10px, rgba(0, 15, 97,0.2) 15px 15px, rgba(0, 15, 97,0.1) 20px 20px, rgba(0, 15, 97,0.05) 25px 25px;
+  box-shadow: rgba(247, 97, 52, 0.4) 5px 5px, rgba(247, 97, 52, 0.3) 10px 10px, rgba(247, 97, 52, 0.2) 15px 15px, rgba(247, 97, 52, 0.1) 20px 20px, rgba(247, 97, 52, 0.01) 25px 25px;
 }
 
 .texto_curiosidade{
@@ -264,7 +264,7 @@ a:hover {
 
 /* Votação */
 .votacao{
-  height: 300vh;
+  height: 320vh;
   width: 100%;
 }
 
@@ -476,13 +476,14 @@ a:hover {
   justify-content: center;
   align-items: center;
   margin-top: 2%;
-  height: 53%;
+  height: 55%;
   width: 100%;
 }
 
 .dunks{
   height: 100%;
   width: 100%;
+
 }
 
 .alinhar_titulo{
@@ -547,6 +548,7 @@ a:hover {
 .nome_dunk_{
   height: 8%;
   width: 100%;
+  margin-top: 3%;
 }
 
 .alinhar_botao{
@@ -593,6 +595,7 @@ a:hover {
   align-items: center;
   font-family: 'Poppins', sans-serif;
   font-size: 26px;
+  margin-top: 3%;
 }
 
 .input_link{
@@ -671,6 +674,7 @@ a:hover {
   align-items: center;
   flex-direction: column;
   margin-top: 5%;
+  font-weight: 700;
 }
 .span_dunk{
   font-family: 'Poppins', sans-serif;
@@ -680,12 +684,27 @@ a:hover {
 
 .dunk_usuario{
   height: 400px;
-  width: 70%;
+  width: 60%;
   background-color: burlywood;
 }
 
+.input_trocar_usuario{
+  width: 800px;
+  margin-left: 20%;
+}
+
+.div_video{
+  height: 100%;
+  width: 100%;
+}
+
+.iframe_{
+  width: 100%;
+  height: 100%;
+}
+
 .dash{
-  height: 170vh;
+  height: 200vh;
   width: 100%;
   font-family: 'Poppins', sans-serif;
   background-color: #0e0b16;
@@ -713,8 +732,11 @@ margin-top: 5%;
 }
 
 .div_total{
-  width: 60vw;
-  height: 60vh;
+  width: 70%;
+  height: 480px;
+  background-color: #E7DFDD;
+  border-radius: 22px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .centro_pizza{
@@ -724,6 +746,8 @@ margin-top: 5%;
   margin-top: 5%;
   height: 480px;
   background-color: #E7DFDD;
+  border-radius: 22px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
 }
 
 .div_dunk{

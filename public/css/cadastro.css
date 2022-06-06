@@ -139,6 +139,7 @@ body {
     height: 60px;   
     font-weight: 700;
     z-index: 2;
+    margin-top: -10%;
 }
 .btn:hover {
     background: #00a0a0;
@@ -188,4 +189,10 @@ body {
     background-color: #65657b;
     color: white;
     height: 40px;
+}
+
+.span_login{
+    color: #f76134;
+    margin-top: 1%;
+    cursor: pointer;
 }

@@ -248,8 +248,13 @@ function mandar_link() {
   //Recupere o valor da nova input pelo nome do id
   // Agora vá para o método fetch logo abaixo
   linkVar = input_link.value
+  linkVar = linkVar.replace('watch?v=','embed/')
   var fk_usuarioVar = sessionStorage.getItem('ID_USUARIO')
   // Enviando o valor da nova input
+  if  (sessionStorage.ID_USUARIO == undefined){
+    alert("Faça login para enviar seu link")
+  }
+  else{
   fetch("/usuarios/mandar_link", {
       method: "POST",
       headers: {
@@ -268,8 +273,9 @@ function mandar_link() {
   }).catch(function (resposta) {
       console.log(`#ERRO: ${resposta}`);
   });
-
-  return false;
+  alert('Video enviado')
+  window.location.href = "home.html"
+}
 }
 
 var lista_link = []
@@ -279,9 +285,9 @@ function pegar_link(){
       resposta.json().then(function (resposta) {
         console.log("Dados recebidos: ", JSON.stringify(resposta));
         for(var c = 0; c < resposta.length; c++){
-          var link = resposta[c]
-          lista_link.push(link.link)
-        }
+          lista_link.push(resposta[c].link)
+        }      
+        plotar_usuario()
       });
     } else {
       throw ('Houve um erro na API!');
@@ -291,6 +297,39 @@ function pegar_link(){
   });
 }
 
-function plotar_usuario(){
-  iframe.src = 'lista_link[0]'
+
+var lista_nome = []
+function pegar_nome(){
+  fetch("/usuarios/pegar_nome").then(function (resposta) {
+    if (resposta.ok) {   
+      resposta.json().then(function (resposta) {
+        console.log("Dados recebidos: ", JSON.stringify(resposta));
+        for(var c = 0; c < resposta.length; c++){
+          lista_nome.push(resposta[c].nome)
+        }  
+        plotar_usuario()    
+      });
+    } else {
+      throw ('Houve um erro na API!');
+    }
+  }).catch(function (resposta) {
+    console.error(resposta);
+  });
 }
+
+
+
+function plotar_usuario(){
+  iframe_.src = lista_link[0]
+  input_trocar_usuario.max = lista_link.length - 1
+  user.innerHTML = lista_nome[0]
+}
+
+var input = document.getElementById('input_trocar_usuario')
+
+input.oninput = function () {
+  var trocar_usuario = Number(input.value)
+  iframe_.src = lista_link[trocar_usuario ]
+  user.innerHTML = lista_nome[trocar_usuario]
+}
+

@@ -127,6 +127,7 @@ body {
     height: 60px;   
     font-weight: 700;
     margin-right: 20%;
+    margin-top: -40%;
 }
 .btn:hover {
     background: #00a0a0;
@@ -143,3 +144,14 @@ body {
     transition: 1S;
 }
 
+.span_login{
+    color: #f76134;
+    cursor: pointer;
+}
+
+.centro {
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

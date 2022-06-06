@@ -22,6 +22,10 @@ router.get("/voto_dunk", function (req, res) {
 router.get("/pegar_link", function (req, res) {
     usuarioController.pegar_link(req, res);
 });
+
+router.get("/pegar_nome", function (req, res) {
+    usuarioController.pegar_nome(req, res);
+});
 //Recebendo os dados do html e direcionando para a função cadastrar de usuarioController.js
 router.post("/cadastrar", function (req, res) {
     usuarioController.cadastrar(req, res);

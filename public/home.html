@@ -7,12 +7,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Dunk News</title>
   <link rel="stylesheet" href="css/home.css">
-  <script src="./js/home.js"></script>
-  <script src="js/grafico.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body onload="votos(), voto_dunk(), pegar_link(), plotar_usuario()">
+<body onload="votos(), voto_dunk(), pegar_link(), pegar_nome()">
   <div class="header" id="header">
     <div class="alinhar_header">
       <nav>
@@ -124,10 +122,10 @@
         </div>
         <div class="nome_dunk">
           <div class="nome_dunk1"><span style="border-bottom: 1px black solid;">Andrew Wiggins</span>
-            <input type="radio" style="margin-left: 2%;" name="bzs" id="wiggins">
+            <input type="radio" style="margin-left: 2%;" name="bzs" id="Wiggins">
           </div>
           <div class="nome_dunk2"><span style="border-bottom: 1px black solid;">Russel Westbrook</span>
-            <input type="radio" style="margin-left: 2%;" name="bzs" id="russ">
+            <input type="radio" style="margin-left: 2%;" name="bzs" id="Westbrook">
           </div>
         </div>
         <div class="primeira_linha">
@@ -146,10 +144,10 @@
 
         <div class="nome_dunk_">
           <div class="nome_dunk1"><span style="border-bottom: 1px black solid; z-index: 1;">Ja Morant</span>
-            <input type="radio" style="margin-left: 2%; z-index: 1;" name="bzs" id="morant">
+            <input type="radio" style="margin-left: 2%; z-index: 1;" name="bzs" id="Morant">
           </div>
           <div class="nome_dunk2"><span style="border-bottom: 1px black solid;">Anthony Edwards</span>
-            <input type="radio" style="margin-left: 2%;" name="bzs" id="edwards">
+            <input type="radio" style="margin-left: 2%;" name="bzs" id="Edwards">
           </div>
         </div>
         <div class="segunda_linha">
@@ -172,12 +170,16 @@
     </div>
 
     <div class="alinhar_dunk_usuario">
-      <span class="span_dunk">Dunk de:</span>
+      <div class="centro">
+      <span class="span_dunk">Dunk de: </span><span id="user" class="span_dunk"> </span> 
+    </div>
+    <br>
       <div class="dunk_usuario">
-        <div class="div_video"><iframe src="" frameborder="0" id="iframe"></iframe>
+        <div class="div_video"><iframe src="" frameborder="0" id="iframe_" class="iframe_"></iframe>
         </div>
       </div>
     </div>
+    <input class="input_trocar_usuario" type="range" id="input_trocar_usuario" min="0" max="0" onclick="">
     <div class="div_link">
       <span>Envie a sua Dunk!:</span> <input placeholder="Link do YouTube" class="input_link" id="input_link">
       <button class="btn_enviar" onclick="mandar_link()">Enviar<img src="img/enviar.png" alt="" class="entrar"></button>
@@ -212,7 +214,7 @@
 
 
   function votar() {
-
+    
     var select = conf.value
     if (select == '1') {
       var time_favVar = conf_leste.value
@@ -228,6 +230,10 @@
         var checkedVar = dunk[i].id
     }
     // Enviando o valor da nova input
+    if  (sessionStorage.ID_USUARIO == undefined){
+    alert("Faça login para votar")
+  }
+  else{
     fetch("/usuarios/votar", {
       method: "POST",
       headers: {
@@ -240,13 +246,16 @@
         checkedServer: checkedVar,
         fk_usuarioServer: fk_usuarioVar
       })
-    }).then(function (resposta) {
+    }
+    ).then(function (resposta) {
 
       console.log("resposta: ", resposta);
     }).catch(function (resposta) {
       console.log(`#ERRO: ${resposta}`);
     });
-
+    alert('Voto feito')
+    window.location.href = "home.html"
+  }
   }
 
   /*   const myChart_oeste = new Chart(
@@ -470,8 +479,8 @@
       labels: [],
       datasets: [{
         label: 'Times mais votados',
-        backgroundColor: '#00b3b3',
-        borderColor: '#777777',
+        backgroundColor: '#f76134',
+        borderColor: '#f76134',
         data: [],
       }]
     }; data.labels.push(time1)
@@ -667,9 +676,10 @@
         title: 'Dunk do Ano',
         data: [],
         backgroundColor: [
-          'rgb(255, 99, 132)',
-          'rgb(54, 162, 235)',
-          'rgb(255, 205, 86)'
+          '#9502E0',
+          '#FFC63B',
+          '#1201FA',
+          '#A4CDFA'
         ],
         hoverOffset: 4,
         font: { weight: 'bold' }
@@ -708,7 +718,7 @@
       }
     };
 
-    Chart.defaults.color = "#FFF"
+    Chart.defaults.color = "#000000"
 
     const myChart_dunk = new Chart(
       document.getElementById('chart_dunk'),
@@ -716,3 +726,5 @@
     );
   }
 </script>
+
+<script src="./js/home.js"></script>

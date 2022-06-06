@@ -238,19 +238,20 @@ a{
     margin-top: 2%;
     height: 100%;
     width: 70%;
-    background-color: #4717f6;
+    background-color: #f76134;
     display: flex;
     align-items: center;
     justify-content: space-around;
     border-radius: 18px;
-    border: #E7DFDD 1px solid;
-    box-shadow: rgba(162, 57, 202, 0.25) 0px 54px 55px, rgba(162, 57, 202, 0.12) 0px -12px 30px, rgba(162, 57, 202, 0.12) 0px 4px 6px, rgba(162, 57, 202, 0.17) 0px 12px 13px, rgba(162, 57, 202, 0.09) 0px -3px 5px;  
+    border: #000f61 1px solid;
+    box-shadow: rgb(204, 219, 232) 3px 3px 6px 0px inset, rgba(255, 255, 255, 0.5) -3px -3px 6px 1px inset;  
 }
 .card{
     height: 90%;
     width: 30%;
     background-color: #E7DFDD;
     border-radius: 14px;
+    border: 1px solid #000f61;
 }
 .div_img_card{
     height: 47.5%;
@@ -259,7 +260,7 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
-    border-bottom: #A239CA 4px solid;
+    border-bottom: #0e0b16 4px solid;
 }
 .span_card{
     display: flex;

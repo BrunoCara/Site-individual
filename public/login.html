@@ -22,6 +22,9 @@
 		  <input id="senha" class="input" type="password" placeholder=" " />
 		  <div class="div_input"></div>
 		  <label for="senha" class="placeholder">Senha</div>
+            <div class="centro">
+            <a href="cadastro.html" style="text-decoration: none;"><span class="span_login">Não tem login? Faça seu cadastro</span></a>
+        </div>
 			<div class="login">
 				<button class="btn" onclick="entrar()">Login<img src="img/entrar.png" alt="" class="entrar"></button>
 			</div>
@@ -31,7 +34,7 @@
 <script>
 	function entrar() {
 
-          var emailVar = email.value;
+        var emailVar = email.value;
         var senhaVar = senha.value;
 
         if (emailVar == "" || senhaVar == "") {
